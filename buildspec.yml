@@ -1,0 +1,39 @@
+version : 0.2
+
+phases : 
+  install: 
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - echo installing
+  pre_build : 
+    commands: 
+      - echo Installing source NPM dependencies...
+  
+      - npm install
+      - npm install express
+      - npm install @babel/polyfill
+      - npm install @babel/preset-env
+      - npm install axios
+      - npm install @babel/core
+      - npm install babel-jest
+      - npm install @babel/plugin-transform-modules-commonjs
+      - npm install express
+      - npm install jest
+      - npm install jsdoc
+      - npm install swagger-jsdoc
+      - npm install swagger-ui-express
+  build: 
+    commands: 
+      - echo build started ...
+      - npm run doc
+      - npm run test
+      - aws codeartifact login --tool npm --repository team3-santosh-api --domain syscloud --domain-owner 538782569624
+      - npm publish
+  post_build: 
+    commands: 
+      - echo build completed.
+artifacts: 
+  files:
+      - 'docs/**/*'
+      - 'coverage/**/*'

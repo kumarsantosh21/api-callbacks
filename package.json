@@ -1,0 +1,32 @@
+{
+  "name": "apicall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "doc": "jsdoc -c jsdoc.json"
+  },
+  "keywords": [],
+  "author": "Santosh",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
+    "@babel/polyfill": "^7.12.1",
+    "axios": "^0.23.0",
+    "babel-jest": "^27.2.5",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jest": "^27.2.5",
+    "jsdoc": "^3.6.7",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.8"
+  }
+}
